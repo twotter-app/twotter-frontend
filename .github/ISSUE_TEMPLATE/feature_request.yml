@@ -30,6 +30,10 @@ body:
   - type: checkboxes
     attributes:
       label: Tasks
-      description: If you can Break it down into smaller tasks, write them down.
+      description: Create your own tasks by checking the boxes or adding new tasks.
+      options:
+        - 'Task 1'
+        - 'Task 2'
+        - 'Task 3'
     validations:
       required: true
