@@ -9,7 +9,7 @@ body:
       label: Type of feature
       description: Select the type of feature.
       options:
-        - '🍕 Feature'
+        - '🚀 Feature'
         - '📝 Documentation'
         - '🎨 Style'
         - '🧑‍💻 Refactor'
