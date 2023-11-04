@@ -30,6 +30,6 @@ body:
   - type: textarea
     attributes:
       label: Tasks
-      description: Create your own tasks by checking the boxes or adding new tasks.
+      description: Break it down to smaller tasks. Using checkboxes would be nice.
     validations:
       required: true
