@@ -27,13 +27,9 @@ body:
       description: Describe your proposal.
     validations:
       required: true
-  - type: checkboxes
+  - type: textarea
     attributes:
       label: Tasks
       description: Create your own tasks by checking the boxes or adding new tasks.
-      options:
-        - 'Task 1'
-        - 'Task 2'
-        - 'Task 3'
     validations:
       required: true
