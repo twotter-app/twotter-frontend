@@ -9,8 +9,7 @@
     - [Branch Naming Conventions](#branch-naming-conventions)
       - [Examples](#examples)
   - [Commit Convention](#commit-convention)
-  - [Pull Requests](#pull-requests)
-    - [For Team Members:](#for-team-members)
+  - [Steps to make a Pull Request](#steps-to-make-a-pull-request)
 
 ## Branching Rules
 
@@ -67,13 +66,7 @@ the following categories:
 - `chore`: all changes to the repository that do not fit into any of the above
   categories
 
-If you are interested in the detailed specification you can visit
-https://www.conventionalcommits.org/ or check out the
-[Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines).
-
-## Pull Requests
-
-### For Team Members:
+## Steps to make a Pull Request
 
 1. Create a new branch from the `develop` branch, or from the `main` branch if you're working on a hotfix.
 2. Follow the [Branch Naming Conventions](#branch-naming-conventions) while naming your branch.
