@@ -4,22 +4,32 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #f2d70c;
+    /* DARK BACKGROUND */
+    --background: #e6e6e6;
+    /* FONT COLOR */
+    --foreground: #000000;
+    /* BUTTON */
+    --primary: #1c9bef;
+    /* BUTTON HOVER */
+    --secondary: #428ad2;
+    /* DISABLE BUTTON */
+    --muted: #99cdf8;
+    /* SIDEBAR HOVER */
+    --popover: #50647d;
+    /* BORDER OF HOME */
+    --border: #eff3f4;
+    /* INPUT FIELD */
+    --input: #ffffff;
 
     --card: #ffffff;
     --card-foreground: #f2d70c;
 
-    --popover: #ffffff;
     --popover-foreground: #f2d70c;
 
-    --primary: #33c51d;
     --primary-foreground: #3500fb;
 
-    --secondary: #32a6f6;
     --secondary-foreground: #33c51d;
 
-    --muted: #32a6f6;
     --muted-foreground: #e8427c;
 
     --accent: #32a6f6;
@@ -28,30 +38,38 @@
     --destructive: #ed0d4c;
     --destructive-foreground: #3500fb;
 
-    --border: #cbe5ff;
-    --input: #cbe5ff;
     --ring: #f2d70c;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: #f2d70c;
-    --foreground: #3500fb;
+    /* DARK BACKGROUND */
+    --background: #000000;
+    /* FONT COLOR */
+    --foreground: #e6e6e6;
+    /* BUTTON */
+    --primary: #4999e9;
+    /* BUTTON HOVER */
+    --secondary: #4372e9;
+    /* DISABLE BUTTON */
+    --muted: #124e78;
+    /* SIDEBAR HOVER */
+    --popover: #50647d;
+    /* BORDER OF HOME */
+    --border: #303336;
+    /* INPUT FIELD */
+    --input: #000000;
 
     --card: #f2d70c;
     --card-foreground: #3500fb;
 
-    --popover: #f2d70c;
     --popover-foreground: #3500fb;
 
-    --primary: #3500fb;
-    --primary-foreground: #33c51d;
+    --primary-foreground: #4372e9;
 
-    --secondary: #45758c;
     --secondary-foreground: #3500fb;
 
-    --muted: #45758c;
     --muted-foreground: #3ba4a6;
 
     --accent: #45758c;
@@ -60,8 +78,6 @@
     --destructive: #993e4d;
     --destructive-foreground: #3500fb;
 
-    --border: #45758c;
-    --input: #45758c;
     --ring: #bac4d6;
   }
 }
