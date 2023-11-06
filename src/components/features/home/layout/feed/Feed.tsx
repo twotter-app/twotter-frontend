@@ -13,7 +13,7 @@ const Feed = () => {
       <Post
         avatar={"https://github.com/shadcn.png"}
         displayName={"Goktug Yildiz"}
-        username={"gktgyldz08"}
+        username={"@gktgyldz08"}
         verified={true}
         text={"heyyy it is the clone project for twitter"}
         image={"https://picsum.photos/400/200"}

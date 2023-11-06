@@ -18,31 +18,37 @@ const Post: React.FC<PostProps> = ({
   avatar,
 }) => {
   return (
-    <div id="post-container">
+    <div id="post-container" className="flex items-start  border-b pb-3">
       <div id="avatar-container">
         <Avatar>
-          {/* If avatar is a URL to the user's avatar image, it should be used here */}
           <AvatarImage src={avatar} alt={displayName} />
           <AvatarFallback>{displayName.charAt(0)}</AvatarFallback>
         </Avatar>
-        {/* Other elements like displayName, username, etc. should be rendered here */}
       </div>
       <div id="body-container">
         <div id="post-header">
           <div id="post-header-text">
-            <h3>
+            <h3 className="flex font-bold items-center justify-start">
               {displayName}
+              {"  "}
               <span>
-                {verified ? <BadgeCheck /> : ""} {username}
+                {verified ? (
+                  <BadgeCheck className="w-4 fill-primary stroke-background" />
+                ) : (
+                  ""
+                )}
+              </span>
+              <span className="text-popover text-sm font-semibold ml-1">
+                {username}
               </span>
             </h3>
           </div>
-          <div id="post-header-description">
+          <div id="post-header-description" className="mb-3 text-base">
             <p>{text}</p>
           </div>
         </div>
-        <img src={image} alt={username} />
-        <div id="post-footer">
+        <img src={image} alt={username} className="rounded-2xl" />
+        <div id="post-footer" className="flex justify-between mt-2">
           <MessageCircle />
           <Repeat2 />
           <Heart />
