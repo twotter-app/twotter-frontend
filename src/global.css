@@ -3,81 +3,73 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    font-family: 'Familjen Grotesk', sans-serif;
+  }
+}
+
+@layer base {
   :root {
-    /* DARK BACKGROUND */
-    --background: #e6e6e6;
-    /* FONT COLOR */
+    --background: #ffffff;
     --foreground: #000000;
-    /* BUTTON */
-    --primary: #1c9bef;
-    /* BUTTON HOVER */
-    --secondary: #428ad2;
-    /* DISABLE BUTTON */
-    --muted: #99cdf8;
-    /* SIDEBAR HOVER */
-    --popover: #50647d;
-    /* BORDER OF HOME */
-    --border: #eff3f4;
-    /* INPUT FIELD */
-    --input: #ffffff;
 
     --card: #ffffff;
-    --card-foreground: #f2d70c;
+    --card-foreground: #000000;
 
-    --popover-foreground: #f2d70c;
+    --popover: #ffffff;
+    --popover-foreground: #000000;
 
-    --primary-foreground: #3500fb;
+    --primary: #1c9bef;
+    --primary-foreground: #ffffff;
 
-    --secondary-foreground: #33c51d;
+    --secondary: #11161a;
+    --secondary-foreground: #ffffff;
 
-    --muted-foreground: #e8427c;
+    --muted: #ffffff;
+    --muted-foreground: #000000;
 
-    --accent: #32a6f6;
-    --accent-foreground: #33c51d;
+    --accent: #99cdf8;
+    --accent-foreground: #ffffff;
 
     --destructive: #ed0d4c;
-    --destructive-foreground: #3500fb;
+    --destructive-foreground: #ffffff;
 
-    --ring: #f2d70c;
+    --border: #eff3f4;
+    --input: #ffffff;
+    --ring: #eff3f4;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    /* DARK BACKGROUND */
     --background: #000000;
-    /* FONT COLOR */
     --foreground: #e6e6e6;
-    /* BUTTON */
+
+    --card: #000000;
+    --card-foreground: #e6e6e6;
+
+    --popover: #000000;
+    --popover-foreground: #e6e6e6;
+
     --primary: #4999e9;
-    /* BUTTON HOVER */
-    --secondary: #4372e9;
-    /* DISABLE BUTTON */
-    --muted: #124e78;
-    /* SIDEBAR HOVER */
-    --popover: #50647d;
-    /* BORDER OF HOME */
-    --border: #303336;
-    /* INPUT FIELD */
-    --input: #000000;
+    --primary-foreground: #ffffff;
 
-    --card: #f2d70c;
-    --card-foreground: #3500fb;
+    --secondary: #e6e6e6;
+    --secondary-foreground: #000000;
 
-    --popover-foreground: #3500fb;
+    --muted: #000000;
+    --muted-foreground: #e6e6e6;
 
-    --primary-foreground: #4372e9;
-
-    --secondary-foreground: #3500fb;
-
-    --muted-foreground: #3ba4a6;
-
-    --accent: #45758c;
-    --accent-foreground: #33c51d;
+    --accent: #124e78;
+    --accent-foreground: #7f8080;
 
     --destructive: #993e4d;
-    --destructive-foreground: #3500fb;
+    --destructive-foreground: #e6e6e6;
 
-    --ring: #bac4d6;
+    --border: #303336;
+    --input: #000000;
+    --border: #303336;
+
+    --radius: 0.5rem;
   }
 }
