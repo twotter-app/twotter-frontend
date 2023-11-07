@@ -1,35 +1,25 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Post } from "@/types/home.type";
 import { BadgeCheck, MessageCircle, Repeat2, Heart, Share } from "lucide-react";
 interface PostProps {
-  displayName: string;
-  username: string;
-  verified: boolean;
-  text: string;
-  image: string;
-  avatar: string;
+  post: Post;
 }
 
-const Post: React.FC<PostProps> = ({
-  displayName,
-  username,
-  verified,
-  text,
-  image,
-  avatar,
-}) => {
+const PostComponent: React.FC<PostProps> = ({ post }) => {
+  const { displayName, username, verified, text, image, avatar } = post;
   return (
     <div id="post-container" className="flex items-start  border-b pb-3">
-      <div id="avatar-container">
+      <div id="avatar-container" className="p-4">
         <Avatar>
           <AvatarImage src={avatar} alt={displayName} />
           <AvatarFallback>{displayName.charAt(0)}</AvatarFallback>
         </Avatar>
       </div>
-      <div id="body-container">
+      <div id="body-container" className="flex-1 pt-2 pr-2">
         <div id="post-header">
           <div id="post-header-text">
             <h3 className="flex font-bold items-center justify-start">
-              {displayName}
+              {post.displayName}
               {"  "}
               <span>
                 {verified ? (
@@ -48,7 +38,7 @@ const Post: React.FC<PostProps> = ({
           </div>
         </div>
         <img src={image} alt={username} className="rounded-2xl" />
-        <div id="post-footer" className="flex justify-between mt-2">
+        <div id="post-footer" className="flex justify-between mt-2 mr-2">
           <MessageCircle />
           <Repeat2 />
           <Heart />
@@ -59,4 +49,4 @@ const Post: React.FC<PostProps> = ({
   );
 };
 
-export default Post;
+export default PostComponent;

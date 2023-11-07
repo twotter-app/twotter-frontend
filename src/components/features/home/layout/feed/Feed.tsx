@@ -1,8 +1,10 @@
+import { postData } from "@/dumyPosts"; // Make sure the path is correct
 import TweetBox from "./TweetBox";
-import Post from "./Post";
-const Feed = () => {
+import PostComponent from "./PostComponent";
+
+const Feed: React.FC = () => {
   return (
-    <div className="basis-2/5 border min-w-fit overflow-y-scroll no-scrollbar ">
+    <div className="basis-2/5 border min-w-fit overflow-y-scroll no-scrollbar">
       {/* header */}
       <div className="sticky top-0 z-50 border-b py-4 px-5 flex justify-around bg-white">
         <h2>For you</h2>
@@ -10,17 +12,9 @@ const Feed = () => {
       </div>
       {/* tweet */}
       <TweetBox />
-      <Post
-        avatar={"https://github.com/shadcn.png"}
-        displayName={"Goktug Yildiz"}
-        username={"@gktgyldz08"}
-        verified={true}
-        text={"heyyy it is the clone project for twitter"}
-        image={"https://picsum.photos/400/200"}
-      />
-      {/*Posts */}
-      {/*Posts */}
-      {/*Posts */}
+      {postData.map((tweet, index) => (
+        <PostComponent key={index} post={tweet} />
+      ))}
     </div>
   );
 };

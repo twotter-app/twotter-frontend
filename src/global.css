@@ -18,7 +18,7 @@
 }
 @layer base {
   body {
-    font-family: 'Familjen Grotesk', sans-serif;
+    font-family: "Familjen Grotesk", sans-serif;
   }
 }
 
@@ -30,7 +30,7 @@
     --card: #ffffff;
     --card-foreground: #000000;
 
-    --popover: #ffffff;
+    --popover: #50647d;
     --popover-foreground: #000000;
 
     --primary: #1c9bef;
