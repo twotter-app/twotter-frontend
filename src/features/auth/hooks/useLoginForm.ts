@@ -1,14 +1,13 @@
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import { loginFormSchema } from '../utils/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { dummyUserLogin } from '@/dummyData/dummyUserLogin';
 import { useCallback } from 'react';
+import { useUserAuth } from './useUserAuth';
 
 export const useLoginForm = () => {
-  const navigate = useNavigate();
-
+  const { loginUser } = useUserAuth();
   const form = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
@@ -26,18 +25,10 @@ export const useLoginForm = () => {
         alert(response.error);
         return;
       }
-      // TODO: Save user using API
-      localStorage.setItem('user', JSON.stringify(response.user));
-      navigate('/');
+      if (response.user) loginUser(response.user);
     },
-    [navigate]
+    [loginUser]
   );
 
-  const checkIfUserIsLoggedIn = useCallback(() => {
-    const user = localStorage.getItem('user');
-    if (user) {
-      navigate('/');
-    }
-  }, [navigate]);
-  return { form, onSubmit, checkIfUserIsLoggedIn };
+  return { form, onSubmit };
 };
