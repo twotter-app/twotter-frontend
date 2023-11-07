@@ -1,9 +1,10 @@
 export interface Post {
-  id: number;
-  displayName: string;
-  username: string;
-  verified: boolean;
-  text: string;
-  image: string;
-  avatar: string;
+  _id: string;
+  author: string;
+  content: string;
+  tags: string[];
+  authorSlug: string;
+  length: number;
+  dateAdded: string;
+  dateModified: string;
 }
