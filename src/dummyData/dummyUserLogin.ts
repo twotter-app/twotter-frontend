@@ -1,4 +1,4 @@
-import { dummyUsers } from '@/dummyData/dummyData';
+import { userData } from '@/dummyData/dummyData';
 import { User } from '@/types/common.types';
 
 export type dummyUserLoginResponseType = {
@@ -13,7 +13,7 @@ export const dummyUserLogin = (
 ): dummyUserLoginResponseType => {
   const response: dummyUserLoginResponseType = { user: null, error: null };
   const { email, password } = user;
-  for (const userInDB of dummyUsers) {
+  for (const userInDB of userData) {
     if (userInDB.email === email) {
       if (userInDB.password === password) {
         response.user = userInDB;

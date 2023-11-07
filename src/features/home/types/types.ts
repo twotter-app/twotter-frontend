@@ -1,4 +1,6 @@
-export interface Post {
+import { User } from '@/types/common.types';
+
+export interface OriginalPost {
   _id: string;
   author: string;
   content: string;
@@ -7,4 +9,9 @@ export interface Post {
   length: number;
   dateAdded: string;
   dateModified: string;
+}
+
+export interface Post extends OriginalPost {
+  image: string;
+  user: User;
 }

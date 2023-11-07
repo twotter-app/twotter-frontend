@@ -39,6 +39,8 @@
     --secondary: #11161a;
     --secondary-foreground: #ffffff;
 
+    --tertiary: #506478;
+
     --muted: #dcdaf5;
     --muted-foreground: #5c6b5c7b;
 
@@ -70,6 +72,8 @@
 
     --secondary: #e6e6e6;
     --secondary-foreground: #000000;
+
+    --tertiary: #506478;
 
     --muted: #5c6b5c7b;
     --muted-foreground: #dcdaf5;
