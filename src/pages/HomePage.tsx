@@ -1,6 +1,6 @@
-import Feed from "@/components/layout/feed/Feed";
-import Sidebar from "@/components/layout/sidebar/Sidebar";
-import Widget from "@/components/layout/widget/Widget";
+import Feed from "@/components/features/home/layout/feed/Feed";
+import Sidebar from "@/components/features/home/layout/sidebar/Sidebar";
+import Widget from "@/components/features/home/layout/widget/Widget";
 export const HomePage = () => {
   return (
     <div className="flex h-screen max-w-7xl ml-auto mr-auto">
