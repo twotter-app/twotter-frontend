@@ -18,7 +18,7 @@
 }
 @layer base {
   body {
-    font-family: "Familjen Grotesk", sans-serif;
+    font-family: 'Familjen Grotesk', sans-serif;
   }
 }
 
@@ -30,8 +30,8 @@
     --card: #ffffff;
     --card-foreground: #000000;
 
-    --popover: #50647d;
-    --popover-foreground: #000000;
+    --popover: #ffffff;
+    --popover-foreground: #1e2e31;
 
     --primary: #1c9bef;
     --primary-foreground: #ffffff;
@@ -39,8 +39,8 @@
     --secondary: #11161a;
     --secondary-foreground: #ffffff;
 
-    --muted: #ffffff;
-    --muted-foreground: #000000;
+    --muted: #dcdaf5;
+    --muted-foreground: #5c6b5c7b;
 
     --accent: #99cdf8;
     --accent-foreground: #ffffff;
@@ -49,8 +49,8 @@
     --destructive-foreground: #ffffff;
 
     --border: #eff3f4;
-    --input: #ffffff;
-    --ring: #eff3f4;
+    --input: #eff3f4;
+    --ring: #1c9bef;
 
     --radius: 0.5rem;
   }
@@ -71,8 +71,8 @@
     --secondary: #e6e6e6;
     --secondary-foreground: #000000;
 
-    --muted: #000000;
-    --muted-foreground: #e6e6e6;
+    --muted: #5c6b5c7b;
+    --muted-foreground: #dcdaf5;
 
     --accent: #124e78;
     --accent-foreground: #7f8080;
@@ -82,7 +82,7 @@
 
     --border: #303336;
     --input: #000000;
-    --border: #303336;
+    --ring: #4999e9;
 
     --radius: 0.5rem;
   }
