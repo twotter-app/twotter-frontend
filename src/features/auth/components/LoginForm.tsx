@@ -1,3 +1,6 @@
+import React from 'react';
+import { UseFormReturn } from 'react-hook-form';
+
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -9,11 +12,20 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useLoginForm } from '../hooks/useLoginForm';
 
-export const LoginForm = () => {
-  const { form, onSubmit } = useLoginForm();
+// type declaration for the form values
+import { loginFormSchema } from '../utils/schemas';
+import { z } from 'zod';
 
+interface Props {
+  form: UseFormReturn<{
+    email: string;
+    password: string;
+  }>;
+  onSubmit: (values: z.infer<typeof loginFormSchema>) => void;
+}
+
+export const LoginForm: React.FC<Props> = ({ form, onSubmit }) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
