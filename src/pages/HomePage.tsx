@@ -27,7 +27,6 @@ export const HomePage = () => {
     {
       onSuccess: (data) => {
         const newPosts = modifyPostData(data);
-        console.log(newPosts);
 
         setPosts(newPosts);
       },
