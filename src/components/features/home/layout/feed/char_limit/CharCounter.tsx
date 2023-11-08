@@ -1,5 +1,5 @@
-import "./CharStyle.css";
-import { CircularProgressbar } from "react-circular-progressbar";
+import './CharStyle.css';
+import { CircularProgressbar } from 'react-circular-progressbar';
 interface CharCounterProps {
   value: number;
   maxValue: number;

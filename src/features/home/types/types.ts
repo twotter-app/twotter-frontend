@@ -15,3 +15,23 @@ export interface Post extends OriginalPost {
   image: string;
   user: User;
 }
+
+export interface NewTwoot {
+  author: string;
+  content: string;
+  authorSlug: string;
+  dateAdded: string;
+}
+
+export interface CreatePostParams {
+  newTwoot: {
+    author: string;
+    content: string;
+    authorSlug: string;
+    dateAdded: string;
+  };
+}
+
+export interface CreatePostResponse {
+  newTwoot: OriginalPost;
+}

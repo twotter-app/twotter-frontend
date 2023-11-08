@@ -2,7 +2,7 @@ import pathManager from 'path-kanri';
 
 /* Twoot Endpoints*/
 const getTwoot = 'twoots';
-const postTwoot = 'twoots';
+const postTwoot = 'twoot';
 
 // Paths of pages
 const { getPath: getApiEndpoint, getFullPath: getApiEndpointFull } =

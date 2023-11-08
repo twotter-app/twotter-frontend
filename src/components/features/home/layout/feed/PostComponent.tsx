@@ -33,7 +33,10 @@ const PostComponent: React.FC<PostProps> = ({ post }) => {
               </span>
             </h3>
           </div>
-          <div id="post-header-description" className="mb-3 text-base">
+          <div
+            id="post-header-description"
+            className="mb-3 text-base break-words overflow-wrap-normal"
+          >
             <p>{content}</p>
           </div>
         </div>
