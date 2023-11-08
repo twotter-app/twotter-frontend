@@ -22,6 +22,7 @@ export const HomePage = () => {
     {
       onSuccess: (data) => {
         const newPosts = modifyPostData(data);
+        console.log(newPosts);
 
         setPosts(newPosts);
       },
@@ -32,7 +33,9 @@ export const HomePage = () => {
   );
 
   const { mutate: createPost } = useCreatePost({
-    onSuccess: () => {
+    onSuccess: (data) => {
+      console.log(data);
+
       refetch();
     },
     onError: (error) => {

@@ -16,8 +16,11 @@ export const usePostForm = () => {
 
   const createNewTwootFromForm = useCallback(
     (values: z.infer<typeof postFormSchema>, user: User): NewTwoot => {
+      console.log('user', user);
+
       const { content } = values;
       const { displayName, userName } = user;
+
       const dateAdded = new Date().toISOString();
       const newTwoot: NewTwoot = {
         content,
@@ -25,6 +28,8 @@ export const usePostForm = () => {
         authorSlug: userName,
         dateAdded,
       };
+      console.log('newTwoot', newTwoot);
+
       return newTwoot;
     },
     []

@@ -7,6 +7,7 @@ export const createPost = async (
 ): Promise<CreatePostResponse> => {
   const { newTwoot } = createPostParams;
   const body = { newTwoot };
+
   const res = await axiosBase().post(getApiEndpointFull('postTwoot'), body);
   return res.data;
 };

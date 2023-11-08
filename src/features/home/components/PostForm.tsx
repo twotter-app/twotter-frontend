@@ -27,12 +27,7 @@ interface Props {
 }
 
 export const PostForm: React.FC<Props> = ({ form, onSubmit }) => {
-  const { formState, getFieldState, watch } = form;
-
-  console.log(getFieldState('content'));
-  console.log(formState);
-  console.log(watch('content'));
-  console.log(formState.isValid);
+  const { formState, watch } = form;
 
   return (
     <Form {...form}>
