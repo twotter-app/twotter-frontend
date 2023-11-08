@@ -28,5 +28,15 @@ export const useUserAuth = () => {
     const parsedUser = JSON.parse(user);
     return parsedUser._id;
   }, []);
-  return { loginUser, checkIfUserAuthenticated, getUserId };
+
+  const getUser = useCallback((): User | undefined => {
+    const user = localStorage.getItem('user');
+    if (!user) {
+      return;
+    }
+    const parsedUser = JSON.parse(user);
+    return parsedUser;
+  }, []);
+
+  return { loginUser, checkIfUserAuthenticated, getUserId, getUser };
 };

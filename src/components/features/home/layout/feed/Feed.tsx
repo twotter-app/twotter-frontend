@@ -1,9 +1,21 @@
-import TweetBox from "./TweetBox";
-import PostComponent from "./PostComponent";
-import { Post } from "@/features/home/types/types";
+import TweetBox from './TweetBox';
+import PostComponent from './PostComponent';
+import {
+  CreatePostParams,
+  CreatePostResponse,
+  Post,
+} from '@/features/home/types/types';
+import { MutateOptions } from 'react-query';
+import { createPost } from '@/features/home/api/service/createPost';
 
 interface Props {
   posts: Post[];
+  createPost: (
+    variables: CreatePostParams,
+    options?:
+      | MutateOptions<CreatePostResponse, Error, CreatePostParams, unknown>
+      | undefined
+  ) => void;
 }
 
 const Feed: React.FC<Props> = ({ posts }) => {
@@ -15,7 +27,7 @@ const Feed: React.FC<Props> = ({ posts }) => {
         <h2>Following</h2>
       </div>
       {/* tweet */}
-      <TweetBox />
+      <TweetBox createPost={createPost} />
       {posts.map((post, index) => (
         <PostComponent key={index} post={post} />
       ))}
