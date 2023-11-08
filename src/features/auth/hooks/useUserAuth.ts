@@ -20,5 +20,13 @@ export const useUserAuth = () => {
     }
   }, [navigate]);
 
-  return { loginUser, checkIfUserAuthenticated };
+  const getUserId = useCallback(() => {
+    const user = localStorage.getItem('user');
+    if (!user) {
+      return;
+    }
+    const parsedUser = JSON.parse(user);
+    return parsedUser._id;
+  }, []);
+  return { loginUser, checkIfUserAuthenticated, getUserId };
 };

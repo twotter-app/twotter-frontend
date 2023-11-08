@@ -1,8 +1,12 @@
-import { postData } from "@/dumyPosts"; // Make sure the path is correct
-import TweetBox from "./TweetBox";
-import PostComponent from "./PostComponent";
+import TweetBox from './TweetBox';
+import PostComponent from './PostComponent';
+import { Post } from '@/features/home/types/types';
 
-const Feed: React.FC = () => {
+interface Props {
+  posts: Post[];
+}
+
+const Feed: React.FC<Props> = ({ posts }) => {
   return (
     <div className="basis-2/5 border min-w-fit overflow-y-scroll no-scrollbar">
       {/* header */}
@@ -12,8 +16,8 @@ const Feed: React.FC = () => {
       </div>
       {/* tweet */}
       <TweetBox />
-      {postData.map((tweet, index) => (
-        <PostComponent key={index} post={tweet} />
+      {posts.map((post, index) => (
+        <PostComponent key={index} post={post} />
       ))}
     </div>
   );
