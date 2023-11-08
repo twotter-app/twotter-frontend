@@ -1,11 +1,11 @@
-import Feed from '@/components/features/home/layout/feed/Feed';
-import Sidebar from '@/components/features/home/layout/sidebar/Sidebar';
-import Widget from '@/components/features/home/layout/widget/Widget';
-import { useUserAuth } from '@/features/auth/hooks/useUserAuth';
-import { useGetPosts } from '@/features/home/api/hooks/useGetPosts';
-import { Post } from '@/features/home/types/types';
-import { modifyPostData } from '@/features/home/utils/modifyPostData';
-import { useEffect, useState } from 'react';
+import Feed from "@/components/features/home/layout/feed/Feed";
+import Sidebar from "@/components/features/home/layout/sidebar/Sidebar";
+import Widget from "@/components/features/home/layout/widget/Widget";
+import { useUserAuth } from "@/features/auth/hooks/useUserAuth";
+import { useGetPosts } from "@/features/home/api/hooks/useGetPosts";
+import { Post } from "@/features/home/types/types";
+import { modifyPostData } from "@/features/home/utils/modifyPostData";
+import { useEffect, useState } from "react";
 export const HomePage = () => {
   const { checkIfUserAuthenticated, getUserId } = useUserAuth();
   const [posts, setPosts] = useState<Post[]>([]);
@@ -37,7 +37,9 @@ export const HomePage = () => {
       <div className="border-r ml-5 basis-1/4 mt-0">
         <Sidebar />
       </div>
-      <Feed posts={posts} />
+      <div className="basis-2/5 overflow-y-scroll no-scrollbar border">
+        <Feed posts={posts} />
+      </div>
       <div>
         <Widget />
       </div>

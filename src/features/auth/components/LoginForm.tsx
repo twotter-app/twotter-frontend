@@ -1,7 +1,7 @@
-import React from 'react';
-import { UseFormReturn } from 'react-hook-form';
+import React from "react";
+import { UseFormReturn } from "react-hook-form";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -10,12 +10,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 
 // type declaration for the form values
-import { loginFormSchema } from '../utils/schemas';
-import { z } from 'zod';
+import { loginFormSchema } from "../utils/schemas";
+import { z } from "zod";
 
 interface Props {
   form: UseFormReturn<{
@@ -34,11 +34,10 @@ export const LoginForm: React.FC<Props> = ({ form, onSubmit }) => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Username or Email</FormLabel>
               <FormControl>
-                <Input placeholder="email" {...field} />
+                <Input placeholder="type your username or mail.." {...field} />
               </FormControl>
-              <FormDescription>Type your email address</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -52,7 +51,6 @@ export const LoginForm: React.FC<Props> = ({ form, onSubmit }) => {
               <FormControl>
                 <Input placeholder="password" {...field} />
               </FormControl>
-              <FormDescription>Type your password</FormDescription>
               <FormMessage />
             </FormItem>
           )}
