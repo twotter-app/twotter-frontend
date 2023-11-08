@@ -4,12 +4,17 @@ import Widget from '@/components/features/home/layout/widget/Widget';
 import { useUserAuth } from '@/features/auth/hooks/useUserAuth';
 import { useCreatePost } from '@/features/home/api/hooks/useCreatePost';
 import { useGetPosts } from '@/features/home/api/hooks/useGetPosts';
+import { usePostForm } from '@/features/home/hooks/usePostForm';
 import { Post } from '@/features/home/types/types';
 import { modifyPostData } from '@/features/home/utils/modifyPostData';
+import { postFormSchema } from '@/features/home/utils/schemas';
 import { useEffect, useState } from 'react';
+import { z } from 'zod';
 export const HomePage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const { checkIfUserAuthenticated, getUserId } = useUserAuth();
+
+  const { checkIfUserAuthenticated, getUserId, getUser } = useUserAuth();
+  const { form: postForm, createNewTwootFromForm } = usePostForm();
 
   useEffect(() => {
     checkIfUserAuthenticated();
@@ -33,9 +38,8 @@ export const HomePage = () => {
   );
 
   const { mutate: createPost } = useCreatePost({
-    onSuccess: (data) => {
-      console.log(data);
-
+    onSuccess: () => {
+      postForm.reset();
       refetch();
     },
     onError: (error) => {
@@ -43,13 +47,22 @@ export const HomePage = () => {
     },
   });
 
+  const onSubmitPost = (values: z.infer<typeof postFormSchema>) => {
+    const user = getUser();
+    // if user hasn't logged in, return
+    // TODO : add a toast message, "you need to login to post"
+    if (!user) return;
+    const newTwoot = createNewTwootFromForm(values, user);
+    createPost({ newTwoot });
+  };
+
   return (
     <div className="flex h-screen max-w-7xl ml-auto mr-auto">
       <div className="border-r ml-5 basis-1/4 mt-0">
         <Sidebar />
       </div>
       <div className="basis-2/5 overflow-y-scroll no-scrollbar border">
-        <Feed posts={posts} createPost={createPost} />
+        <Feed posts={posts} form={postForm} onSubmitPost={onSubmitPost} />
       </div>
       <div>
         <Widget />

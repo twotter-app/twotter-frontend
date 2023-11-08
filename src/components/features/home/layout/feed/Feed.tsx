@@ -1,24 +1,21 @@
+import { z } from 'zod';
+import { UseFormReturn } from 'react-hook-form';
+
 import TweetBox from './TweetBox';
 import PostComponent from './PostComponent';
-import {
-  CreatePostParams,
-  CreatePostResponse,
-  Post,
-} from '@/features/home/types/types';
-import { MutateOptions } from 'react-query';
-import { createPost } from '@/features/home/api/service/createPost';
+
+import { Post } from '@/features/home/types/types';
+import { postFormSchema } from '@/features/home/utils/schemas';
 
 interface Props {
   posts: Post[];
-  createPost: (
-    variables: CreatePostParams,
-    options?:
-      | MutateOptions<CreatePostResponse, Error, CreatePostParams, unknown>
-      | undefined
-  ) => void;
+  form: UseFormReturn<{
+    content: string;
+  }>;
+  onSubmitPost: (values: z.infer<typeof postFormSchema>) => void;
 }
 
-const Feed: React.FC<Props> = ({ posts }) => {
+const Feed: React.FC<Props> = ({ posts, form, onSubmitPost }) => {
   return (
     <div className="">
       {/* header */}
@@ -27,7 +24,7 @@ const Feed: React.FC<Props> = ({ posts }) => {
         <h2>Following</h2>
       </div>
       {/* tweet */}
-      <TweetBox createPost={createPost} />
+      <TweetBox form={form} onSubmit={onSubmitPost} />
       {posts.map((post, index) => (
         <PostComponent key={index} post={post} />
       ))}
