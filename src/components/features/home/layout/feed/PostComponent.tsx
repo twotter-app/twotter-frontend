@@ -1,9 +1,12 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Post } from "@/features/home/types/types";
-import { BadgeCheck, MessageCircle, Share } from "lucide-react";
-import Heart from "@/components/ui/HearthButton";
-import Repost2 from "@/components/ui/RepostButton";
-import { useState } from "react";
+import { useState } from 'react';
+import ReactTimeAgo from 'react-time-ago';
+import { BadgeCheck, MessageCircle, Share, Dot } from 'lucide-react';
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Post } from '@/features/home/types/types';
+import Heart from '@/components/ui/HearthButton';
+import Repost2 from '@/components/ui/RepostButton';
+
 interface PostProps {
   post: Post;
 }
@@ -17,7 +20,7 @@ const PostComponent: React.FC<PostProps> = ({ post }) => {
   const toggleRepost = () => {
     SetIsReposted(!isReposted);
   };
-  const { content, image, user } = post;
+  const { content, image, user, dateAdded } = post;
   const { avatar, displayName, userName, isVerified } = user;
   return (
     <div
@@ -39,11 +42,22 @@ const PostComponent: React.FC<PostProps> = ({ post }) => {
                 {isVerified ? (
                   <BadgeCheck className="w-4 fill-primary stroke-background" />
                 ) : (
-                  ""
+                  ''
                 )}
               </span>
               <span className="text-tertiary text-sm font-semibold ml-1">
-                {"@" + userName}
+                {'@' + userName}
+              </span>
+              <span>
+                <Dot className="w-4 h-4 mt-1/2" />
+              </span>
+              <span>
+                <ReactTimeAgo
+                  date={dateAdded}
+                  timeStyle="twitter"
+                  locale="en-US"
+                  className="font-normal text-xs mb-2"
+                />
               </span>
             </h3>
           </div>

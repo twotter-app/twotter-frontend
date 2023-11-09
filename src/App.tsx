@@ -4,6 +4,11 @@ import { Router } from "./routes/router";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "./lib/react-query";
 import { ThemeProvider } from "@/theme/theme-provide.tsx";
+import TimeAgo from "javascript-time-ago";
+
+import en from "javascript-time-ago/locale/en.json";
+
+TimeAgo.addDefaultLocale(en);
 
 function App() {
   return (

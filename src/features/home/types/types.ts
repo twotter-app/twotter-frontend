@@ -1,4 +1,4 @@
-import { User } from '@/types/common.types';
+import { User } from "@/types/common.types";
 
 export interface OriginalPost {
   _id: string;
@@ -7,7 +7,7 @@ export interface OriginalPost {
   tags: string[];
   authorSlug: string;
   length: number;
-  dateAdded: string;
+  dateAdded: number;
   dateModified: string;
 }
 
