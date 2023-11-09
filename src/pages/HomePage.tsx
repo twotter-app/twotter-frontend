@@ -2,6 +2,7 @@ import { CreatePostDialog } from '@/components/features/home/layout/dialogs/Crea
 import Feed from '@/components/features/home/layout/feed/Feed';
 import Sidebar from '@/components/features/home/layout/sidebar/Sidebar';
 import Widget from '@/components/features/home/layout/widget/Widget';
+import { Dialog } from '@/components/ui/dialog';
 import { useToast } from '@/components/ui/use-toast';
 import { useUserAuth } from '@/features/auth/hooks/useUserAuth';
 import { useCreatePost } from '@/features/home/api/hooks/useCreatePost';
@@ -10,7 +11,8 @@ import { usePostForm } from '@/features/home/hooks/usePostForm';
 import { Post } from '@/features/home/types/types';
 import { modifyPostData } from '@/features/home/utils/modifyPostData';
 import { postFormSchema } from '@/features/home/utils/schemas';
-import { Dialog } from '@radix-ui/react-dialog';
+import { useAppDispatch } from '@/stores/hooks';
+import { updateIsLoading } from '@/stores/slices/loadingSlice';
 import { useEffect, useState } from 'react';
 import { z } from 'zod';
 export const HomePage = () => {
@@ -18,6 +20,7 @@ export const HomePage = () => {
 
   const { checkIfUserAuthenticated, getUserId, getUser } = useUserAuth();
   const { form: postForm, createNewTwootFromForm } = usePostForm();
+  const dispatch = useAppDispatch();
 
   const { toast } = useToast();
 
@@ -27,7 +30,7 @@ export const HomePage = () => {
 
   const userId = getUserId();
 
-  const { refetch, isLoading } = useGetPosts(
+  const { refetch, isLoading: isLoadingGetPosts } = useGetPosts(
     { userId },
     {
       onSuccess: (data) => {
@@ -44,7 +47,7 @@ export const HomePage = () => {
     }
   );
 
-  const { mutate: createPost } = useCreatePost({
+  const { mutate: createPost, isLoading: isLoadingCreatePost } = useCreatePost({
     onSuccess: () => {
       postForm.reset();
       refetch();
@@ -71,6 +74,11 @@ export const HomePage = () => {
     const newTwoot = createNewTwootFromForm(values, user);
     createPost({ newTwoot });
   };
+
+  useEffect(() => {
+    dispatch(updateIsLoading(isLoadingGetPosts || isLoadingCreatePost));
+  }, [isLoadingGetPosts, isLoadingCreatePost, dispatch]);
+
   return (
     <div className="flex h-screen max-w-7xl ml-auto mr-auto bg-background text-foreground">
       <Dialog>
