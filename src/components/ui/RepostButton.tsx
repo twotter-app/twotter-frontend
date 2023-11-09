@@ -7,7 +7,6 @@ type RepostProps = {
 };
 
 const Repost2: React.FC<RepostProps> = ({ isReposted, onClick }) => {
-  // Ref for the element you want to animate
   const repostRef = useRef(null);
 
   useEffect(() => {
@@ -17,13 +16,13 @@ const Repost2: React.FC<RepostProps> = ({ isReposted, onClick }) => {
         scale: 1.25,
         duration: 0.5,
         ease: "elastic.out(1, 0.5)",
-        repeat: 1, // To make it infinite like your CSS animation
+        repeat: 1,
       });
     } else {
-      // Reverse the animation when unliked
+      // Reverse the animation when cliked to un-repost
       gsap.to(repostRef.current, { scale: 1, duration: 0.2, ease: "none" });
     }
-  }, [isReposted]); // Dependency array includes isLiked to react to its changes
+  }, [isReposted]);
 
   return (
     <svg

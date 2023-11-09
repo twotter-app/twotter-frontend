@@ -7,7 +7,6 @@ type HeartProps = {
 };
 
 const Heart: React.FC<HeartProps> = ({ isLiked, onClick }) => {
-  // Ref for the element you want to animate
   const heartRef = useRef(null);
 
   useEffect(() => {
@@ -17,13 +16,12 @@ const Heart: React.FC<HeartProps> = ({ isLiked, onClick }) => {
         scale: 1.25,
         duration: 0.5,
         ease: "elastic.out(1, 0.5)",
-        repeat: 2, // To make it infinite like your CSS animation
+        repeat: 2,
       });
     } else {
-      // Reverse the animation when unliked
       gsap.to(heartRef.current, { scale: 1, duration: 0.2, ease: "none" });
     }
-  }, [isLiked]); // Dependency array includes isLiked to react to its changes
+  }, [isLiked]);
 
   return (
     <svg
