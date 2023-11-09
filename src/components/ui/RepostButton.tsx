@@ -29,7 +29,9 @@ const Repost2: React.FC<RepostProps> = ({ isReposted, onClick }) => {
       onClick={onClick}
       ref={repostRef}
       className={`lucide lucide-repeat-2 cursor-pointer hover:stroke-successful w-5 h-5 ${
-        isReposted ? 'stroke-successful' : 'fill-none stroke-foreground'
+        isReposted
+          ? 'fill-none stroke-successful'
+          : 'fill-none stroke-foreground'
       }`}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
