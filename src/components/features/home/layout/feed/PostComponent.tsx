@@ -1,6 +1,6 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Post } from '@/features/home/types/types';
-import { BadgeCheck, MessageCircle, Repeat2, Heart, Share } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Post } from "@/features/home/types/types";
+import { BadgeCheck, MessageCircle, Repeat2, Heart, Share } from "lucide-react";
 interface PostProps {
   post: Post;
 }
@@ -9,7 +9,10 @@ const PostComponent: React.FC<PostProps> = ({ post }) => {
   const { content, image, user } = post;
   const { avatar, displayName, userName, isVerified } = user;
   return (
-    <div id="post-container" className="flex items-start  border-b pb-3">
+    <div
+      id="post-container"
+      className="flex items-start  border-b  border-border pb-3"
+    >
       <div id="avatar-container" className="p-4">
         <Avatar>
           <AvatarImage src={avatar} alt={displayName} />
@@ -25,11 +28,11 @@ const PostComponent: React.FC<PostProps> = ({ post }) => {
                 {isVerified ? (
                   <BadgeCheck className="w-4 fill-primary stroke-background" />
                 ) : (
-                  ''
+                  ""
                 )}
               </span>
               <span className="text-tertiary text-sm font-semibold ml-1">
-                {'@' + userName}
+                {"@" + userName}
               </span>
             </h3>
           </div>

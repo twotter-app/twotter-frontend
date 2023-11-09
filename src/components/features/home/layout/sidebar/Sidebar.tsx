@@ -5,6 +5,7 @@ import SidebarOptions from "./SidebarOptions";
 import PostButton from "./PostButton";
 import { Home, Search, Bell, Mail, User2 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ModeToggle } from "@/theme/mode-toggle";
 
 const Sidebar = () => {
   return (
@@ -35,6 +36,7 @@ const Sidebar = () => {
           <h3>Goktug Yildiz</h3>
           <h5>@gktgyldz08</h5>
         </div>
+        <ModeToggle />
       </div>
     </>
   );

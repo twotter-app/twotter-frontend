@@ -18,7 +18,7 @@
 }
 @layer base {
   body {
-    font-family: 'Familjen Grotesk', sans-serif;
+    font-family: "Familjen Grotesk", sans-serif;
   }
 }
 
@@ -40,6 +40,7 @@
     --secondary-foreground: #ffffff;
 
     --tertiary: #506478;
+    --quaternary: #e2e2e2;
 
     --muted: #dcdaf5;
     --muted-foreground: #5c6b5c7b;
@@ -50,7 +51,7 @@
     --destructive: #ed0d4c;
     --destructive-foreground: #ffffff;
 
-    --border: #eff3f4;
+    --border: #d5d5d5;
     --input: #eff3f4;
     --ring: #1c9bef;
 
@@ -74,6 +75,7 @@
     --secondary-foreground: #000000;
 
     --tertiary: #506478;
+    --quaternary: #2e3239;
 
     --muted: #5c6b5c7b;
     --muted-foreground: #dcdaf5;
