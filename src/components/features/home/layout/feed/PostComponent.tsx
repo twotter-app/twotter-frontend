@@ -1,12 +1,21 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Post } from "@/features/home/types/types";
-import { BadgeCheck, MessageCircle, Repeat2, Heart, Share } from "lucide-react";
+import {
+  BadgeCheck,
+  MessageCircle,
+  Repeat2,
+  Heart,
+  Share,
+  Dot,
+} from "lucide-react";
+import ReactTimeAgo from "react-time-ago";
+
 interface PostProps {
   post: Post;
 }
 
 const PostComponent: React.FC<PostProps> = ({ post }) => {
-  const { content, image, user } = post;
+  const { content, image, user, dateAdded } = post;
   const { avatar, displayName, userName, isVerified } = user;
   return (
     <div
@@ -33,6 +42,17 @@ const PostComponent: React.FC<PostProps> = ({ post }) => {
               </span>
               <span className="text-tertiary text-sm font-semibold ml-1">
                 {"@" + userName}
+              </span>
+              <span>
+                <Dot className="w-4 h-4 mt-1/2" />
+              </span>
+              <span>
+                <ReactTimeAgo
+                  date={dateAdded}
+                  timeStyle="twitter"
+                  locale="en-US"
+                  className="font-normal text-xs mb-2"
+                />
               </span>
             </h3>
           </div>
