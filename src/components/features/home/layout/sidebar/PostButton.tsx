@@ -8,7 +8,7 @@ const PostButton = () => {
     <Button
       variant="default"
       size="lg"
-      className="text-white bg-blue-500 hover:bg-blue-600 mt-5 rounded-3xl"
+      className="text-white bg-blue-500 hover:bg-primary mt-5 rounded-3xl"
     >
       <PencilLine />
       <h2 className="mr-5 pl-5 text-lg font-semibold md:block hidden">

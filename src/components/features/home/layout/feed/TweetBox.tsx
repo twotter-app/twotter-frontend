@@ -21,7 +21,7 @@ export default function TweetBox() {
   };
 
   return (
-    <div className="border-b pb-3 pr-3 mt-2">
+    <div className="border-b-4 border-border pb-3 pr-3 mt-2">
       <form action="" className="flex flex-col" onSubmit={handleSubmit}>
         <div className="flex space-x-3 ml-4">
           <Avatar>
@@ -45,13 +45,13 @@ export default function TweetBox() {
               type="button"
               className="p-2 hover:bg-gray-200 rounded-full"
             >
-              <Image />
+              <Image className="hover:stroke-primary" />
             </button>
             <button
               type="button"
               className="p-2 hover:bg-gray-200 rounded-full"
             >
-              <Smile />
+              <Smile className="hover:stroke-primary" />
             </button>
           </div>
           <div className="flex items-center gap-4">

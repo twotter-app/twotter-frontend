@@ -10,7 +10,7 @@ const Feed: React.FC<Props> = ({ posts }) => {
   return (
     <div className="">
       {/* header */}
-      <div className="sticky top-0 z-50 border-b py-4 px-5 flex justify-around bg-white">
+      <div className="sticky top-0 z-50 border-b py-4 px-5 flex justify-around bg-background border-border">
         <h2>For you</h2>
         <h2>Following</h2>
       </div>

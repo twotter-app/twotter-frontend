@@ -33,11 +33,11 @@ export const HomePage = () => {
   console.log(posts);
 
   return (
-    <div className="flex h-screen max-w-7xl ml-auto mr-auto">
-      <div className="border-r ml-5 basis-1/4 mt-0">
+    <div className="flex h-screen max-w-7xl ml-auto mr-auto bg-background text-foreground">
+      <div className="border-r border-border ml-5 basis-1/4 mt-0">
         <Sidebar />
       </div>
-      <div className="basis-2/5 overflow-y-scroll no-scrollbar border">
+      <div className="basis-2/5 overflow-y-scroll no-scrollbar border-r border-border">
         <Feed posts={posts} />
       </div>
       <div>

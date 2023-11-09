@@ -28,15 +28,22 @@ interface Props {
 export const LoginForm: React.FC<Props> = ({ form, onSubmit }) => {
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-8 text-foreground "
+      >
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username or Email</FormLabel>
+              <FormLabel className="font-bold">Username or Email</FormLabel>
               <FormControl>
-                <Input placeholder="type your username or mail.." {...field} />
+                <Input
+                  className="border-foreground opacity-60 focus:opacity-100"
+                  placeholder="type your username or mail.."
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -47,15 +54,19 @@ export const LoginForm: React.FC<Props> = ({ form, onSubmit }) => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel className="font-bold">Password</FormLabel>
               <FormControl>
-                <Input placeholder="password" {...field} />
+                <Input
+                  className="border-foreground opacity-60 focus:opacity-100 "
+                  placeholder="password"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full hover:bg-blue-600">
           Submit
         </Button>
       </form>
