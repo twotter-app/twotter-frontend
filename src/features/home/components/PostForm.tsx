@@ -18,6 +18,7 @@ import CharCounter from '@/components/features/home/layout/feed/char_limit/CharC
 
 // type declaration for the form values
 import { postFormSchema } from '../utils/schemas';
+import { DialogClose } from '@radix-ui/react-dialog';
 
 interface Props {
   form: UseFormReturn<{
@@ -58,16 +59,16 @@ export const PostForm: React.FC<Props> = ({ form, onSubmit }) => {
           />
         </div>
         <div className="flex justify-between items-center mt-4">
-          <div className="flex space-x-2 text-gray-500 pl-14">
+          <div className="flex space-x-2 text-tertiary pl-14">
             <button
               type="button"
-              className="p-2 hover:bg-gray-200 rounded-full"
+              className="p-2 hover:bg-quaternary rounded-full"
             >
               <Image />
             </button>
             <button
               type="button"
-              className="p-2 hover:bg-gray-200 rounded-full"
+              className="p-2 hover:bg-quaternary rounded-full"
             >
               <Smile />
             </button>
@@ -77,15 +78,17 @@ export const PostForm: React.FC<Props> = ({ form, onSubmit }) => {
               <CharCounter value={watch('content').length} maxValue={140} />
             </div>
             <div>
-              <Button
-                type="submit"
-                variant={formState.isValid ? 'default' : 'secondary'}
-                size="lg"
-                disabled={!formState.isValid}
-                className="py-2 px-4 rounded-full"
-              >
-                Post
-              </Button>
+              <DialogClose>
+                <Button
+                  type="submit"
+                  variant={formState.isValid ? 'default' : 'secondary'}
+                  size="lg"
+                  disabled={!formState.isValid}
+                  className="py-2 px-4 rounded-full"
+                >
+                  Post
+                </Button>
+              </DialogClose>
             </div>
           </div>
         </div>
