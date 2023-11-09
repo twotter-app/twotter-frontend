@@ -2,6 +2,7 @@ import { CreatePostDialog } from '@/components/features/home/layout/dialogs/Crea
 import Feed from '@/components/features/home/layout/feed/Feed';
 import Sidebar from '@/components/features/home/layout/sidebar/Sidebar';
 import Widget from '@/components/features/home/layout/widget/Widget';
+import { useToast } from '@/components/ui/use-toast';
 import { useUserAuth } from '@/features/auth/hooks/useUserAuth';
 import { useCreatePost } from '@/features/home/api/hooks/useCreatePost';
 import { useGetPosts } from '@/features/home/api/hooks/useGetPosts';
@@ -18,6 +19,8 @@ export const HomePage = () => {
   const { checkIfUserAuthenticated, getUserId, getUser } = useUserAuth();
   const { form: postForm, createNewTwootFromForm } = usePostForm();
 
+  const { toast } = useToast();
+
   useEffect(() => {
     checkIfUserAuthenticated();
   }, [checkIfUserAuthenticated]);
@@ -29,11 +32,14 @@ export const HomePage = () => {
     {
       onSuccess: (data) => {
         const newPosts = modifyPostData(data);
-
         setPosts(newPosts);
       },
       onError: (error) => {
         console.log(error);
+        toast({
+          variant: 'destructive',
+          title: 'Failed to fetch the latest posts',
+        });
       },
     }
   );
@@ -42,9 +48,18 @@ export const HomePage = () => {
     onSuccess: () => {
       postForm.reset();
       refetch();
+      toast({
+        variant: 'successful',
+        title: 'Successfully posted!',
+        // className: 'bottom-[10%] xl:right-[120%] ',
+      });
     },
     onError: (error) => {
       console.log(error);
+      toast({
+        variant: 'destructive',
+        title: 'Failed to create a post!',
+      });
     },
   });
 
