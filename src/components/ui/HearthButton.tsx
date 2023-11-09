@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 
 type HeartProps = {
   isLiked: boolean;
@@ -15,11 +15,11 @@ const Heart: React.FC<HeartProps> = ({ isLiked, onClick }) => {
       gsap.to(heartRef.current, {
         scale: 1.25,
         duration: 0.5,
-        ease: "elastic.out(1, 0.5)",
+        ease: 'elastic.out(1, 0.5)',
         repeat: 2,
       });
     } else {
-      gsap.to(heartRef.current, { scale: 1, duration: 0.2, ease: "none" });
+      gsap.to(heartRef.current, { scale: 1, duration: 0.2, ease: 'none' });
     }
   }, [isLiked]);
 
@@ -27,15 +27,15 @@ const Heart: React.FC<HeartProps> = ({ isLiked, onClick }) => {
     <svg
       onClick={onClick}
       ref={heartRef}
-      className={`lucide lucide-heart cursor-pointer hover:stroke-destructive w-5 h-5 ${
-        isLiked ? "fill-destructive stroke-destructive" : "fill-none"
+      className={`lucide lucide-heart cursor-pointer  hover:stroke-destructive w-5 h-5 ${
+        isLiked
+          ? 'fill-destructive stroke-destructive'
+          : 'fill-none stroke-foreground'
       }`}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="#000000"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
