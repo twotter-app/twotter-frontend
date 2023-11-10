@@ -8,6 +8,7 @@
 - Color Config & Dark theme implementation
 - Feature to like & repost posts
 - Date of posts
+- Error Page
 
 ### Kanta
 
@@ -20,7 +21,10 @@
 
 ### Sky
 
--
+- How to create effective components
+- Basics of React (Handling Props, Types, Hooks)
+- Tailwind styling
+- GSAP Animation
 
 ### Kanta
 
@@ -31,7 +35,9 @@
 
 ### Sky
 
--
+- It was my first time of creating react project.
+- Thinking and dividing components wisely
+- Handling multiple libraries and packages
 
 ### Kanta
 
@@ -41,7 +47,7 @@
 
 ### Sky
 
--
+- Impelementing React Router V6 (https://reactrouter.com/en/main/start/tutorial)
 
 ### Kanta
 
