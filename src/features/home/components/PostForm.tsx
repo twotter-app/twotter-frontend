@@ -45,7 +45,7 @@ export const PostForm: React.FC<Props> = ({ form, onSubmit }) => {
             control={form.control}
             name="content"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="xl:w-[80%]">
                 <FormControl>
                   <Textarea
                     placeholder="What's happening?"
