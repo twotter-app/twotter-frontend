@@ -2,66 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
+@layer base {
+  body {
+    font-family: 'Familjen Grotesk', sans-serif;
+  }
+}
+
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #f2d70c;
+    --foreground: #000000;
 
     --card: #ffffff;
-    --card-foreground: #f2d70c;
+    --card-foreground: #000000;
 
     --popover: #ffffff;
-    --popover-foreground: #f2d70c;
+    --popover-foreground: #1e2e31;
 
-    --primary: #33c51d;
-    --primary-foreground: #3500fb;
+    --primary: #1c9bef;
+    --primary-foreground: #ffffff;
 
-    --secondary: #32a6f6;
-    --secondary-foreground: #33c51d;
+    --secondary: #11161a;
+    --secondary-foreground: #ffffff;
 
-    --muted: #32a6f6;
-    --muted-foreground: #e8427c;
+    --tertiary: #506478;
+    --quaternary: #e2e2e2;
 
-    --accent: #32a6f6;
-    --accent-foreground: #33c51d;
+    --muted: #dcdaf5;
+    --muted-foreground: #5c6b5c7b;
+
+    --accent: #99cdf8;
+    --accent-foreground: #ffffff;
+
+    --successful: #00a859;
+    --successful-foreground: #e6e6e6;
 
     --destructive: #ed0d4c;
-    --destructive-foreground: #3500fb;
+    --destructive-foreground: #ffffff;
 
-    --border: #cbe5ff;
-    --input: #cbe5ff;
-    --ring: #f2d70c;
+    --border: #d5d5d5;
+    --input: #eff3f4;
+    --ring: #1c9bef;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: #f2d70c;
-    --foreground: #3500fb;
+    --background: #000000;
+    --foreground: #e6e6e6;
 
-    --card: #f2d70c;
-    --card-foreground: #3500fb;
+    --card: #000000;
+    --card-foreground: #e6e6e6;
 
-    --popover: #f2d70c;
-    --popover-foreground: #3500fb;
+    --popover: #000000;
+    --popover-foreground: #e6e6e6;
 
-    --primary: #3500fb;
-    --primary-foreground: #33c51d;
+    --primary: #4999e9;
+    --primary-foreground: #ffffff;
 
-    --secondary: #45758c;
-    --secondary-foreground: #3500fb;
+    --secondary: #e6e6e6;
+    --secondary-foreground: #000000;
 
-    --muted: #45758c;
-    --muted-foreground: #3ba4a6;
+    --tertiary: #506478;
+    --quaternary: #2e3239;
 
-    --accent: #45758c;
-    --accent-foreground: #33c51d;
+    --muted: #5c6b5c7b;
+    --muted-foreground: #ffffff;
 
-    --destructive: #993e4d;
-    --destructive-foreground: #3500fb;
+    --accent: #124e78;
+    --accent-foreground: #7f8080;
 
-    --border: #45758c;
-    --input: #45758c;
-    --ring: #bac4d6;
+    --successful: #00a859;
+    --successful-foreground: #e6e6e6;
+
+    --destructive: #ed0d4c;
+    --destructive-foreground: #e6e6e6;
+
+    --border: #303336;
+    --input: #000000;
+    --ring: #4999e9;
+
+    --radius: 0.5rem;
   }
 }

@@ -1,15 +1,30 @@
-import { Button } from './components/ui/button';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './routes/router';
+import { QueryClientProvider } from 'react-query';
+import { queryClient } from './lib/react-query';
+import { ThemeProvider } from '@/theme/ThemeProvider';
+import TimeAgo from 'javascript-time-ago';
+
+import en from 'javascript-time-ago/locale/en.json';
+import { Toaster } from './components/ui/toaster';
+import { Provider } from 'react-redux';
+import { store } from './stores/store';
+
+TimeAgo.addDefaultLocale(en);
 
 function App() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen space-y-20">
-      <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Vite, React, Tailwind minimal starter
-      </h1>
-      <Button variant="secondary" size="lg">
-        Click here
-      </Button>
-    </main>
+    <Provider store={store}>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <QueryClientProvider client={queryClient}>
+          <BrowserRouter>
+            <Router />
+            <Toaster />
+          </BrowserRouter>
+        </QueryClientProvider>
+      </ThemeProvider>
+    </Provider>
   );
 }
 
