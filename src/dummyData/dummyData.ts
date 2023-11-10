@@ -1,4 +1,4 @@
-import { User } from '@/types/common.types';
+import { User } from '@/types/types';
 import { Post } from '@/features/home/types/types';
 
 export const userData: User[] = [

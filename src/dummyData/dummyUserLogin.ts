@@ -1,5 +1,5 @@
-import { userData } from "@/dummyData/dummyData";
-import { User } from "@/types/common.types";
+import { userData } from '@/dummyData/dummyData';
+import { User } from '@/types/types';
 
 export type dummyUserLoginResponseType = {
   user: User | null;
@@ -19,11 +19,11 @@ export const dummyUserLogin = (
         response.user = userInDB;
         return response;
       } else {
-        response.error = "Password is incorrect";
+        response.error = 'Password is incorrect';
         return response;
       }
     }
   }
-  response.error = "User not found with this email";
+  response.error = 'User not found with this email';
   return response;
 };

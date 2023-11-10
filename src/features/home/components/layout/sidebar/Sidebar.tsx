@@ -1,9 +1,9 @@
-import TwootLogo from '@/components/ui/Logo/TwootLogo';
+import TwootLogo from '@/components/Logo/TwootLogo';
 import SidebarOptions from './SidebarOptions';
 import PostButton from './PostButton';
 import { Home, Search, Bell, Mail, User2 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { ModeToggle } from '@/theme/mode-toggle';
+import { ModeToggle } from '@/components/ui/ModeToggleButton';
 
 const Sidebar = () => {
   return (

@@ -1,4 +1,4 @@
-import { User } from '@/types/common.types';
+import { User } from '@/types/types';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 

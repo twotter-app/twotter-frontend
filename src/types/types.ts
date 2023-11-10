@@ -6,5 +6,4 @@ export interface User {
   avatar: string;
   displayName: string;
   isVerified: boolean;
-  dateAdded: number;
 }
