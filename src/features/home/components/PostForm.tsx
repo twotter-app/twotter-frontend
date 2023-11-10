@@ -1,24 +1,24 @@
-import React from 'react';
-import { UseFormReturn } from 'react-hook-form';
-import { z } from 'zod';
-import { Image, Smile } from 'lucide-react';
+import React from "react";
+import { UseFormReturn } from "react-hook-form";
+import { z } from "zod";
+import { Image, Smile } from "lucide-react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
-} from '@/components/ui/form';
-import { Textarea } from '@/components/ui/textarea';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+} from "@/components/ui/form";
+import { Textarea } from "@/components/ui/textarea";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import CharCounter from './layout/feed/char_limit/CharCounter';
+import CharCounter from "./layout/feed/char_limit/CharCounter";
 
 // type declaration for the form values
-import { postFormSchema } from '../utils/schemas';
-import { DialogClose } from '@radix-ui/react-dialog';
+import { postFormSchema } from "../utils/schemas";
+import { DialogClose } from "@radix-ui/react-dialog";
 
 interface Props {
   form: UseFormReturn<{
@@ -49,7 +49,7 @@ export const PostForm: React.FC<Props> = ({ form, onSubmit }) => {
                 <FormControl>
                   <Textarea
                     placeholder="What's happening?"
-                    className="flex-1 border-none outline-none resize-none"
+                    className="flex-1 border-none outline-none resize-none w-full"
                     {...field}
                   />
                 </FormControl>
@@ -75,13 +75,13 @@ export const PostForm: React.FC<Props> = ({ form, onSubmit }) => {
           </div>
           <div className="flex items-center gap-4">
             <div>
-              <CharCounter value={watch('content').length} maxValue={140} />
+              <CharCounter value={watch("content").length} maxValue={140} />
             </div>
             <div>
               <DialogClose>
                 <Button
                   type="submit"
-                  variant={formState.isValid ? 'default' : 'secondary'}
+                  variant={formState.isValid ? "default" : "secondary"}
                   size="lg"
                   disabled={!formState.isValid}
                   className="py-2 px-4 rounded-full"
