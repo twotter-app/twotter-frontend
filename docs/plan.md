@@ -4,9 +4,10 @@
 
 ### Sky
 
-- Basic Home Page UI
+- Home Page UI
 - Color Config & Dark theme implementation
 - Feature to like & repost posts
+- Char Limit
 - Date of posts
 - Error Page
 
@@ -23,8 +24,10 @@
 
 - How to create effective components
 - Basics of React (Handling Props, Types, Hooks)
-- Tailwind styling
+- Tailwind Styling
 - GSAP Animation
+- Navigation
+- Dealing with NPM packages
 
 ### Kanta
 
