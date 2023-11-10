@@ -6,15 +6,18 @@ export type dummyUserLoginResponseType = {
   error: string | null;
 };
 
-type dummyUserLoginParams = { email: string; password: string };
+type dummyUserLoginParams = { emailOrUserName: string; password: string };
 
 export const dummyUserLogin = (
   user: dummyUserLoginParams
 ): dummyUserLoginResponseType => {
   const response: dummyUserLoginResponseType = { user: null, error: null };
-  const { email, password } = user;
+  const { emailOrUserName, password } = user;
   for (const userInDB of userData) {
-    if (userInDB.email === email || userInDB.userName === email) {
+    if (
+      userInDB.email === emailOrUserName ||
+      userInDB.userName === emailOrUserName
+    ) {
       if (userInDB.password === password) {
         response.user = userInDB;
         return response;

@@ -11,15 +11,15 @@ export const useLoginForm = () => {
   const form = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
-      email: '',
+      emailOrUserName: '',
       password: '',
     },
   });
 
   const onSubmit = useCallback(
     (values: z.infer<typeof loginFormSchema>) => {
-      const { email, password } = values;
-      const response = dummyUserLogin({ email, password });
+      const { emailOrUserName, password } = values;
+      const response = dummyUserLogin({ emailOrUserName, password });
       if (response.error) {
         // TODO: Show error message with toast
         alert(response.error);
