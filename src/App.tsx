@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Router } from './routes/router';
 import { QueryClientProvider } from 'react-query';
 import { queryClient } from './lib/react-query';
-import { ThemeProvider } from '@/theme/theme-provide.tsx';
+import { ThemeProvider } from '@/theme/ThemeProvider';
 import TimeAgo from 'javascript-time-ago';
 
 import en from 'javascript-time-ago/locale/en.json';

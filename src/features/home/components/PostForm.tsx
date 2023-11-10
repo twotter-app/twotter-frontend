@@ -14,7 +14,7 @@ import {
 import { Textarea } from '@/components/ui/textarea';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
-import CharCounter from '@/components/features/home/layout/feed/char_limit/CharCounter';
+import CharCounter from './layout/feed/char_limit/CharCounter';
 
 // type declaration for the form values
 import { postFormSchema } from '../utils/schemas';

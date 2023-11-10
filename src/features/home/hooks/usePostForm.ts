@@ -3,7 +3,7 @@ import { postFormSchema } from '../utils/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useCallback } from 'react';
-import { User } from '@/types/common.types';
+import { User } from '@/types/types';
 import { NewTwoot } from '../types/types';
 
 export const usePostForm = () => {

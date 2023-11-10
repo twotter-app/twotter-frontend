@@ -1,7 +1,7 @@
-import { CreatePostDialog } from '@/components/features/home/layout/dialogs/CreatePostDialog';
-import Feed from '@/components/features/home/layout/feed/Feed';
-import Sidebar from '@/components/features/home/layout/sidebar/Sidebar';
-import Widget from '@/components/features/home/layout/widget/Widget';
+import { CreatePostDialog } from '@/features/home/components/layout/dialogs/CreatePostDialog';
+import Feed from '@/features/home/components/layout/feed/Feed';
+import Sidebar from '@/features/home/components/layout/sidebar/Sidebar';
+import Widget from '@/features/home/components/layout/widget/Widget';
 import { Dialog } from '@/components/ui/dialog';
 import { useToast } from '@/components/ui/use-toast';
 import { useUserAuth } from '@/features/auth/hooks/useUserAuth';
@@ -15,6 +15,7 @@ import { useAppDispatch } from '@/stores/hooks';
 import { updateIsLoading } from '@/stores/slices/loadingSlice';
 import { useEffect, useState } from 'react';
 import { z } from 'zod';
+
 export const HomePage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 

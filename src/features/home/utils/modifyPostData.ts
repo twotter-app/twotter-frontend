@@ -1,4 +1,4 @@
-import { User } from '@/types/common.types';
+import { User } from '@/types/types';
 import { OriginalPost, Post } from '../types/types';
 
 const userData: User[] = [

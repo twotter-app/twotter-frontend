@@ -53,7 +53,7 @@ const PostComponent: React.FC<PostProps> = ({ post }) => {
               </span>
               <span>
                 <ReactTimeAgo
-                  date={dateAdded}
+                  date={new Date(dateAdded)}
                   timeStyle="twitter"
                   locale="en-US"
                   className="font-normal text-xs mb-2"
