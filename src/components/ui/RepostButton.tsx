@@ -38,8 +38,8 @@ const Repost2: React.FC<RepostProps> = ({ isReposted, onClick }) => {
       height="24"
       viewBox="0 0 24 24"
       strokeWidth="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path d="m2 9 3-3 3 3" />
       <path d="M13 18H7a2 2 0 0 1-2-2V6" />

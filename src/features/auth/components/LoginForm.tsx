@@ -1,25 +1,24 @@
-import React from "react";
-import { UseFormReturn } from "react-hook-form";
+import React from 'react';
+import { UseFormReturn } from 'react-hook-form';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 
 // type declaration for the form values
-import { loginFormSchema } from "../utils/schemas";
-import { z } from "zod";
+import { loginFormSchema } from '../utils/schemas';
+import { z } from 'zod';
 
 interface Props {
   form: UseFormReturn<{
-    email: string;
+    emailOrUserName: string;
     password: string;
   }>;
   onSubmit: (values: z.infer<typeof loginFormSchema>) => void;
@@ -34,13 +33,13 @@ export const LoginForm: React.FC<Props> = ({ form, onSubmit }) => {
       >
         <FormField
           control={form.control}
-          name="email"
+          name="emailOrUserName"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="font-bold">Username or Email</FormLabel>
               <FormControl>
                 <Input
-                  className="border-foreground opacity-60 focus:opacity-100"
+                  className="border-foreground focus:border-none opacity-60 focus:opacity-100"
                   placeholder="type your username or mail.."
                   {...field}
                 />
@@ -57,7 +56,7 @@ export const LoginForm: React.FC<Props> = ({ form, onSubmit }) => {
               <FormLabel className="font-bold">Password</FormLabel>
               <FormControl>
                 <Input
-                  className="border-foreground opacity-60 focus:opacity-100 "
+                  className="border-foreground focus:border-none opacity-60 focus:opacity-100 "
                   placeholder="password"
                   {...field}
                 />
