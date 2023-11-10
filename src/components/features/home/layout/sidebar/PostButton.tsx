@@ -1,21 +1,23 @@
-//  SKY
-//  Twoot button aka post button in the sidebar created by using ui/button
-import { PencilLine } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { PencilLine } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { DialogTrigger } from '@radix-ui/react-dialog';
 
 const PostButton = () => {
   return (
-    <Button
-      variant="default"
-      size="lg"
-      className="text-white bg-blue-500 hover:bg-primary mt-5 rounded-3xl"
-    >
-      <PencilLine />
-      <h2 className="mr-5 pl-5 text-lg font-semibold md:block hidden">
-        TwooT
-      </h2>{" "}
-      {/* Hide text on small screens */}
-    </Button>
+    <DialogTrigger asChild>
+      <Button
+        type="submit"
+        variant="default"
+        size="lg"
+        className="text-primary-foreground bg-primary hover:bg-primary mt-5 rounded-3xl"
+      >
+        <PencilLine />
+        <h2 className="mr-5 pl-5 text-lg font-semibold md:block hidden">
+          TwooT
+        </h2>{' '}
+        {/* Hide text on small screens */}
+      </Button>
+    </DialogTrigger>
   );
 };
 

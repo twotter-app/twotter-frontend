@@ -1,3 +1,4 @@
+import { CreatePostDialog } from '@/components/features/home/layout/dialogs/CreatePostDialog';
 import Feed from '@/components/features/home/layout/feed/Feed';
 import Sidebar from '@/components/features/home/layout/sidebar/Sidebar';
 import Widget from '@/components/features/home/layout/widget/Widget';
@@ -8,6 +9,7 @@ import { usePostForm } from '@/features/home/hooks/usePostForm';
 import { Post } from '@/features/home/types/types';
 import { modifyPostData } from '@/features/home/utils/modifyPostData';
 import { postFormSchema } from '@/features/home/utils/schemas';
+import { Dialog } from '@radix-ui/react-dialog';
 import { useEffect, useState } from 'react';
 import { z } from 'zod';
 export const HomePage = () => {
@@ -54,18 +56,20 @@ export const HomePage = () => {
     const newTwoot = createNewTwootFromForm(values, user);
     createPost({ newTwoot });
   };
-
   return (
     <div className="flex h-screen max-w-7xl ml-auto mr-auto bg-background text-foreground">
-      <div className="border-r border-border ml-5 basis-1/4 mt-0">
-        <Sidebar />
-      </div>
-      <div className="basis-2/5 overflow-y-scroll no-scrollbar border-r border-border">
-        <Feed posts={posts} form={postForm} onSubmitPost={onSubmitPost} />
-      </div>
-      <div>
-        <Widget />
-      </div>
+      <Dialog>
+        <CreatePostDialog form={postForm} onSubmitPost={onSubmitPost} />
+        <div className="border-r border-border ml-5 basis-1/4 mt-0">
+          <Sidebar />
+        </div>
+        <div className="basis-2/5 overflow-y-scroll no-scrollbar border-r border-border">
+          <Feed posts={posts} form={postForm} onSubmitPost={onSubmitPost} />
+        </div>
+        <div>
+          <Widget />
+        </div>
+      </Dialog>
     </div>
   );
 };
