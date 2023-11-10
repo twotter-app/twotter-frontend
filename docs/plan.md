@@ -4,10 +4,12 @@
 
 ### Sky
 
-- Basic Home Page UI
+- Home Page UI
 - Color Config & Dark theme implementation
 - Feature to like & repost posts
+- Char Limit
 - Date of posts
+- Error Page
 
 ### Kanta
 
@@ -20,7 +22,12 @@
 
 ### Sky
 
--
+- How to create effective components
+- Basics of React (Handling Props, Types, Hooks)
+- Tailwind Styling
+- GSAP Animation
+- Navigation
+- Dealing with NPM packages
 
 ### Kanta
 
@@ -31,7 +38,9 @@
 
 ### Sky
 
--
+- It was my first time of creating react project.
+- Thinking and dividing components wisely
+- Handling multiple libraries and packages
 
 ### Kanta
 
@@ -41,7 +50,7 @@
 
 ### Sky
 
--
+- Impelementing React Router V6 (https://reactrouter.com/en/main/start/tutorial)
 
 ### Kanta
 
