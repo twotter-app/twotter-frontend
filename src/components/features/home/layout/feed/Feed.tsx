@@ -6,6 +6,9 @@ import PostComponent from './PostComponent';
 
 import { Post } from '@/features/home/types/types';
 import { postFormSchema } from '@/features/home/utils/schemas';
+import { useAppSelector } from '@/stores/hooks';
+import { selectIsLoading } from '@/stores/slices/loadingSlice';
+import { SkeltonPostComponent } from './SkeltonPostComponent';
 
 interface Props {
   posts: Post[];
@@ -16,6 +19,7 @@ interface Props {
 }
 
 const Feed: React.FC<Props> = ({ posts, form, onSubmitPost }) => {
+  const { isLoading } = useAppSelector(selectIsLoading);
   return (
     <div className="">
       {/* header */}
@@ -25,6 +29,13 @@ const Feed: React.FC<Props> = ({ posts, form, onSubmitPost }) => {
       </div>
       {/* tweet */}
       <TweetBox form={form} onSubmit={onSubmitPost} />
+      {isLoading && (
+        <>
+          <SkeltonPostComponent />
+          <SkeltonPostComponent />
+          <SkeltonPostComponent />
+        </>
+      )}
       {posts.map((post, index) => (
         <PostComponent key={index} post={post} />
       ))}
